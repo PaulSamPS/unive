@@ -1,0 +1,126 @@
+.wrapper {
+  max-width: 336px;
+  position: relative;
+  max-height: 304px;
+
+  .event {
+    .image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .checked {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--purple);
+      font-weight: 500;
+      font-size: 8px;
+      line-height: 9px;
+      letter-spacing: 0.02em;
+      width: 56px;
+      height: 49px;
+      position: absolute;
+      top: 20px;
+      right: 33px;
+      box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 0 0 10px 10px;
+
+      span {
+        margin-top: 5px;
+        color: var(--white);
+      }
+    }
+  }
+
+  .bottomBlock {
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    background-color: var(--lightGrayBackground);
+    width: 315px;
+    bottom: -69px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: 24px 186px 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+            'title title date'
+            'subtitle subtitle subtitle'
+            'time timeText timeJoin';
+
+    .title {
+      margin: 0;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.02em;
+      color: var(--deepBlue);
+      grid-area: title;
+    }
+
+    .subTitle {
+      font-size: 11px;
+      line-height: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--darkPurpleText);
+      margin: 0 0 6px;
+      grid-area: subtitle;
+    }
+
+    .date {
+      text-align: center;
+      color: var(--grayText);
+      display: flex;
+      flex-direction: column;
+      width: 27px;
+      grid-area: date;
+      justify-self: end;
+
+      .number {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      .text {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 11px;
+        text-transform: uppercase;
+      }
+    }
+
+    .time {
+      grid-area: time;
+      align-self: center;
+    }
+
+    .timeText {
+      grid-area: timeText;
+      margin-left: 4px;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.02em;
+      color: var(--deepRed);
+      align-self: center;
+    }
+
+    .timeJoin {
+      align-self: center;
+      grid-area: timeJoin;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.02em;
+      color: var(--purple);
+      cursor: pointer;
+    }
+  }
+}

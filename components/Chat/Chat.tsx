@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react'
-import PlusIcon from '../../Layout/Body/plus.svg'
+import React, {useState} from 'react'
 import {WhiteBlock} from '../WhiteBlock/WhiteBlock'
-import cn from 'classnames'
 import {IUserMessenger} from './Chat.interface'
+import {ChatProps} from './Chat.props'
+import PlusIcon from '../../Layout/Body/plus.svg'
+import cn from 'classnames'
 
 import styles from './Chat.module.scss'
-import {ChatProps} from "./Chat.props";
 
 export const Chat = ({user, className, ...props}: ChatProps): JSX.Element => {
     const [messageRead, setMessageRead] = useState(false)

@@ -2,21 +2,25 @@
   padding: 47px 40px;
   display: grid;
   grid-template-columns: 336px 425px 310px;
-  grid-template-rows: auto repeat(2, 1fr);
+  grid-template-rows: auto 305px auto;
   grid-template-areas:
           'title title title'
-          'course course chat';
+          'course course chat'
+          'event upcomingSessions chat';
   row-gap: 20px;
   column-gap: 25px;
 
   .title {
     grid-area: title;
+    font-size: 21px;
+    line-height: 25px;
+    color: var(--headline);
   }
 
   .course {
-    padding: 26px;
+    padding: 26px 9px 15px;
+    height: 305px;
     max-width: 787px;
-    max-height: 305px;
     grid-area: course;
 
     .programs {
@@ -34,5 +38,13 @@
 
   .chat {
     grid-area: chat;
+  }
+
+  .event {
+    grid-area: event;
+  }
+
+  .upcomingSessions {
+    grid-area: upcomingSessions;
   }
 }

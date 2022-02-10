@@ -3,11 +3,12 @@ import {BodyProps} from './Header.props'
 import cn from 'classnames'
 import {CourseCard, WhiteBlock} from '../../components'
 import {ICourseCard} from '../../components/CourseCard/CourseCard.interface'
-import PlusIcon from './plus.svg'
 
 import styles from './Body.module.scss'
 import {Chat} from "../../components/Chat/Chat";
 import axios from "axios";
+import Event from "../../components/Event/Event";
+import UpcomingSessions from "../../components/UpcomingSessions/UpcomingSessions";
 
 const course = [
     {id: 0, title: 'Master of Computer Science', desc: 'University of Upstateat at Brookstone', img:'/placeholder1.png', average: 'A-'},
@@ -29,6 +30,8 @@ export const Body = ({className, ...props}: BodyProps): JSX.Element => {
                 {course.map((course: ICourseCard) => <CourseCard className={styles.card} key={course.id} course={course}/>)}
             </WhiteBlock>
             <Chat className={styles.chat} user={user}/>
+            <Event className={styles.event}/>
+            <UpcomingSessions className={styles.upcomingSessions}/>
         </div>
     )
 }

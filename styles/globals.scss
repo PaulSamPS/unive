@@ -3,8 +3,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #F0EFF5;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -19,12 +18,19 @@ a {
 :root {
   --lightPurple: #C0BEFF;
   --purple: #5855D6;
+  --softPurpleText: #65708D;
   --darkPurpleText: #9592A6;
   --red: #EE3637;
+  --deepRed: #FF2C55;
   --white: #ffffff;
   --green: #6FCF97;
+  --softBlue: #E7E7FF;
+  --sessionsBlue: #021442;
   --darkBlue: #0A043C;
+  --deepBlue: #0E1566;
   --darkGray: #77838F;
   --headline: #333269;
   --lightGray: #EEEEEE;
+  --lightGrayBackground: #FAFAFF;
+  --grayText: #868597;
 }
