@@ -1,75 +1,86 @@
 .wrapper {
-  padding-top: 23px;
-  padding-bottom: 23px;
+	padding-top: 23px;
+	padding-bottom: 23px;
 
-  .course {
-    display: grid;
-    grid-template-columns: 68px 1fr auto;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-              'icon info evaluateBlock'
-              'icon info evaluateBlock'
-  ;
-    gap: 16px;
+	.course {
+		display: grid;
+		grid-template-columns: 68px 1fr auto;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+			'icon info evaluateBlock'
+			'icon info evaluateBlock';
+		gap: 16px;
 
-    .icon {
-      grid-area: icon;
-    }
+		.icon {
+			grid-area: icon;
+		}
 
-    .info {
-      grid-area: info;
+		.info {
+			grid-area: info;
 
-      .tagBlock {
-        margin-bottom: 11px;
+			.tagBlock {
+				margin-bottom: 11px;
 
-        .tag {
-          background-color: var(--purple);
-          color: var(--white);
-          padding: 5px 10px;
-          font-size: 10px;
-          line-height: 24px;
-          border-radius: 35px;
-          text-transform: uppercase;
-          font-weight: 600;
-        }
-      }
+				.tag {
+					padding: 5px 10px;
 
-      .text {
-        display: inline-block;
-        color: var(--headline);
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        letter-spacing: -0.24px;
-        max-width: 260px;
-      }
-    }
+					text-transform: uppercase;
 
-    .evaluateBlock {
-      grid-area: evaluateBlock;
-      display: flex;
-      flex-direction: column;
-      color: var(--darkPurpleText);
-      padding-right: 43px;
+					color: var(--white);
+					border-radius: 35px;
+					background-color: var(--purple);
 
-      .evaluate {
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 57px;
-        text-align: center;
-      }
+					font-size: 10px;
+					font-weight: 600;
+					line-height: 24px;
+				}
+			}
 
-      .academicAverage {
-        text-align: center;
-        font-size: 10px;
-        line-height: 12px;
-      }
-    }
-  }
+			.text {
+				display: inline-block;
 
-  .border {
-    margin-top: 24px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eeeeee;
-  }
+				max-width: 260px;
+
+				letter-spacing: -0.24px;
+
+				color: var(--headline);
+
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 17px;
+			}
+		}
+
+		.evaluateBlock {
+			display: flex;
+			flex-direction: column;
+
+			padding-right: 43px;
+
+			color: var(--darkPurpleText);
+			grid-area: evaluateBlock;
+
+			.evaluate {
+				text-align: center;
+
+				font-size: 36px;
+				font-weight: bold;
+				line-height: 57px;
+			}
+
+			.academicAverage {
+				text-align: center;
+
+				font-size: 10px;
+				line-height: 12px;
+			}
+		}
+	}
+
+	.border {
+		margin-top: 24px;
+		margin-bottom: 20px;
+
+		border-bottom: 1px solid #EEE;
+	}
 }

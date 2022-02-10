@@ -1,55 +1,59 @@
 .menu {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  .item {
-    display: grid;
-    grid-template-columns: 5px 41px auto 1fr;
-    grid-template-areas: ". . icon text" ;
-    align-items: center;
-    border-left: 5px solid transparent;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 0.02em;
-    margin-bottom: 31px;
-    height: 34px;
-    color: var(--lightPurple);
+	.item {
+		display: grid;
+		align-items: center;
 
-    .icon {
-      grid-area: icon;
-    }
+		height: 34px;
+		margin-bottom: 31px;
 
-    .text {
-      grid-area: text;
-      cursor: pointer;
-    }
+		letter-spacing: 0.02em;
 
-    svg {
-      margin-right: 18px;
+		color: var(--lightPurple);
+		border-left: 5px solid transparent;
 
-      rect {
-        stroke: var(--lightPurple);
-      }
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 21px;
+		grid-template-columns: 5px 41px auto 1fr;
+		grid-template-areas: ". . icon text";
 
-      path {
-        fill: var(--lightPurple);
-      }
-    }
-  }
+		.icon {
+			grid-area: icon;
+		}
 
-  .active {
-    color: var(--white);
-    border-left: 5px solid var(--red);
+		.text {
+			cursor: pointer;
+			grid-area: text;
+		}
 
-    svg {
-      rect {
-        stroke: var(--white);
-      }
+		svg {
+			margin-right: 18px;
 
-      path {
-        fill: var(--white);
-      }
-    }
-  }
+			rect {
+				stroke: var(--lightPurple);
+			}
+
+			path {
+				fill: var(--lightPurple);
+			}
+		}
+	}
+
+	.active {
+		color: var(--white);
+		border-left: 5px solid var(--red);
+
+		svg {
+			rect {
+				stroke: var(--white);
+			}
+
+			path {
+				fill: var(--white);
+			}
+		}
+	}
 }

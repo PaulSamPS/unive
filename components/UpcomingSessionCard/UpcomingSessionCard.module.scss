@@ -1,0 +1,85 @@
+.sessions {
+	display: grid;
+	grid-template-columns: 60px 1fr auto;
+
+	align-items: center;
+	grid-template-areas: 'dateSession desc timeBlock';
+	column-gap: 18px;
+
+	margin-bottom: 20px;
+
+	.dateSession {
+		display: flex;
+		flex-direction: column;
+
+		text-align: center;
+
+		color: var(--grayText);
+		grid-area: dateSession;
+
+		.dateStart {
+			margin-bottom: 4px;
+
+			color: var(--purple);
+
+			font-size: 10px;
+			font-weight: 600;
+			line-height: 12px;
+		}
+
+		.number {
+			font-size: 18px;
+			font-weight: bold;
+			line-height: 21px;
+		}
+
+		.text {
+			text-transform: uppercase;
+
+			font-size: 10px;
+			font-weight: 600;
+			line-height: 11px;
+		}
+	}
+
+	.classBlock {
+		grid-area: desc;
+
+		.classTitle {
+			color: var(--sessionsBlue);
+
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 14px;
+		}
+
+		.classSubTitle {
+			margin: 0;
+
+			letter-spacing: 0.02em;
+
+			color: var(--darkPurpleText);
+
+			font-size: 11px;
+			line-height: 13px;
+		}
+	}
+
+	.timeBlock {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 87px;
+		height: 22px;
+
+		color: var(--headline);
+		border-radius: 11px;
+		background-color: var(--softBlue);
+
+		font-size: 9px;
+		font-weight: 600;
+		line-height: 11px;
+		grid-area: timeBlock;
+	}
+}

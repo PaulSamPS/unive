@@ -1,21 +1,24 @@
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 46px;
-  margin-bottom: 41px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  .logoText {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 48px;
-    margin-left: 12px;
-  }
+	margin-top: 46px;
+	margin-bottom: 41px;
 
-  h1 {
-    margin: 0;
-    background: -webkit-linear-gradient(104.99deg, rgba(255, 255, 255, 0.69) 4.5%, rgba(222, 221, 255, 0.7) 77.86%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+	.logoText {
+		margin-left: 12px;
+
+		font-size: 30px;
+		font-weight: 600;
+		line-height: 48px;
+	}
+
+	h1 {
+		margin: 0;
+
+		background: -webkit-linear-gradient(104.99deg, rgba(255, 255, 255, 0.69) 4.5%, rgba(222, 221, 255, 0.7) 77.86%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }

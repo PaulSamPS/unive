@@ -1,50 +1,52 @@
 .wrapper {
-  padding: 47px 40px;
-  display: grid;
-  grid-template-columns: 336px 425px 310px;
-  grid-template-rows: auto 305px auto;
-  grid-template-areas:
-          'title title title'
-          'course course chat'
-          'event upcomingSessions chat';
-  row-gap: 20px;
-  column-gap: 25px;
+	display: grid;
 
-  .title {
-    grid-area: title;
-    font-size: 21px;
-    line-height: 25px;
-    color: var(--headline);
-  }
+	padding: 47px 40px 35px;
+	grid-template-columns: 336px 425px 310px;
+	grid-template-rows: auto 305px auto;
+	grid-template-areas:
+		'title title title'
+		'course course chat'
+		'event upcomingSessions chat';
+	row-gap: 20px;
+	column-gap: 25px;
 
-  .course {
-    padding: 26px 9px 15px;
-    height: 305px;
-    max-width: 787px;
-    grid-area: course;
+	.title {
+		color: var(--headline);
 
-    .programs {
-      margin: 0;
-    }
+		font-size: 21px;
+		line-height: 25px;
+		grid-area: title;
+	}
 
-    .card {
-      border-bottom: 1px solid #eeeeee;
+	.course {
+		max-width: 787px;
+		height: 305px;
+		padding: 26px 9px 15px;
+		grid-area: course;
 
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
+		.programs {
+			margin: 0;
+		}
 
-  .chat {
-    grid-area: chat;
-  }
+		.card {
+			border-bottom: 1px solid #EEE;
 
-  .event {
-    grid-area: event;
-  }
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
 
-  .upcomingSessions {
-    grid-area: upcomingSessions;
-  }
+	.chat {
+		grid-area: chat;
+	}
+
+	.event {
+		grid-area: event;
+	}
+
+	.upcomingSessions {
+		grid-area: upcomingSessions;
+	}
 }

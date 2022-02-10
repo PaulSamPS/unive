@@ -1,30 +1,33 @@
-import React from 'react'
-import {WhiteBlock} from "../WhiteBlock/WhiteBlock";
-import styles from './UpcomingSessions.module.scss'
-import {UpcomingSessionsProps} from "./UpcomingSessions.props";
-import cn from "classnames";
+import React, {useState} from 'react'
+import {WhiteBlock} from '../WhiteBlock/WhiteBlock'
+import {UpcomingSessionsProps} from './UpcomingSessions.props'
+import {ISession} from './UpcomingSessions.interface'
+import UpcomingSessionCard from '../UpcomingSessionCard/UpcomingSessionCard'
+import cn from 'classnames'
 
-const UpcomingSessions = ({className, ...props}: UpcomingSessionsProps): JSX.Element => {
+import styles from './UpcomingSessions.module.scss'
+
+const UpcomingSessions = ({sessions, className, ...props}: UpcomingSessionsProps): JSX.Element => {
+    const [sessionLength, setSessionLength] = useState<number>(3)
+    const [seeAllSessions, setSeeAllSessions] = useState<boolean>(false)
+
+    const seeAll = () => {
+        setSessionLength(sessions.length)
+        setSeeAllSessions(!seeAllSessions)
+    }
+
     return (
         <WhiteBlock className={cn(styles.wrapper, className)} {...props}>
             <h3 className={styles.title}>Upcoming Sessions</h3>
+                <div className={styles.titleSessions}>
+                    <span className={styles.date}>Date</span>
+                    <span className={styles.class}>Class</span>
+                    <span className={styles.time}>Time</span>
+                </div>
             <div className={styles.sessions}>
-                <span className={styles.date}>Date</span>
-                <span className={styles.class}>Class</span>
-                <span className={styles.time}>Time</span>
-                <div className={styles.dateSession}>
-                    <span className={styles.dateStart}>Tomorrow</span>
-                    <span className={styles.number}>09</span>
-                    <span className={styles.text}>April</span>
-                </div>
-                <div className={styles.classBlock}>
-                    <span className={styles.classTitle}>Database and Information Systems</span>
-                    <p className={styles.classSubTitle}>Master of Computer Science</p>
-                </div>
-                <div className={styles.timeBlock}>
-                    3:30pm-7:00pm
-                </div>
+                {sessions.slice(0, sessionLength).map((session: ISession) => <UpcomingSessionCard key={session.id} session={session}/>)}
             </div>
+            <span className={styles.seeAll} onClick={seeAll}>{!seeAllSessions ? 'See All Sessions' : 'Hide All Sessions'}</span>
         </WhiteBlock>
     )
 }

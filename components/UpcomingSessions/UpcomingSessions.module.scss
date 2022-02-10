@@ -1,98 +1,72 @@
 .wrapper {
-  max-width: 425px;
-  padding: 27px 24px;
+	max-width: 425px;
+	max-height: 373px;
+	padding: 27px 24px;
 
-  .title {
-    margin: 0 0 28px;
-  }
+	.title {
+		margin: 0 0 28px;
+	}
 
-  .sessions {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    grid-template-rows: auto;
-    grid-template-areas:
-            'date class time'
-            'dateSession desc timeBlock'
-  ;
-    row-gap: 20px;
-    column-gap: 18px;
-    color: var(--softPurpleText);
-    font-size: 14px;
-    line-height: 17px;
-  }
+	.titleSessions {
+		display: grid;
 
-  .date {
-    grid-area: date;
-  }
+		margin-bottom: 27px;
 
-  .class {
-    grid-area: class;
-  }
+		color: var(--softPurpleText);
 
-  .time {
-    grid-area: time;
-  }
+		font-size: 14px;
+		line-height: 17px;
+		grid-template-columns: 60px 1fr 87px;
+		grid-template-areas: 'date class time';
+		column-gap: 18px;
 
-  .dateSession {
-    text-align: center;
-    color: var(--grayText);
-    display: flex;
-    flex-direction: column;
-    grid-area: dateSession;
-    margin-right: 13px;
+		.date {
+			grid-area: date;
+		}
 
-    .dateStart {
-      font-weight: 600;
-      font-size: 10px;
-      line-height: 12px;
-      color: var(--purple);
-    }
+		.class {
+			grid-area: class;
+		}
 
-    .number {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 21px;
-    }
+		.time {
+			grid-area: time;
+		}
+	}
 
-    .text {
-      font-weight: 600;
-      font-size: 10px;
-      line-height: 11px;
-      text-transform: uppercase;
-    }
-  }
+	.sessions {
+		overflow-y: auto;
 
-  .classBlock {
-    grid-area: desc;
-    .classTitle {
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 14px;
-      color: var(--sessionsBlue);
-    }
+		max-height: 204px;
 
-    .classSubTitle {
-      color: var(--darkPurpleText);
-      font-size: 11px;
-      line-height: 13px;
-      letter-spacing: 0.02em;
-      margin: 0;
-    }
-  }
+		&::-webkit-scrollbar {
+			width: 0;
+		}
 
-  .timeBlock {
-    grid-area: timeBlock;
-    background-color: var(--softBlue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 87px;
-    height: 22px;
-    border-radius: 11px;
-    font-weight: 600;
-    font-size: 9px;
-    line-height: 11px;
-    color: var(--headline);
-  }
+		&::-webkit-scrollbar {
+			height: 5px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background-color: var(--lightGray);
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: var(--darkPurpleText);
+		}
+	}
+
+	.seeAll {
+		display: flex;
+		justify-content: right;
+
+		cursor: pointer;
+		letter-spacing: 0.02em;
+
+		color: var(--purple);
+
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 17px;
+	}
 }

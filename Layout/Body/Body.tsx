@@ -17,8 +17,10 @@ const course = [
 
 export const Body = ({className, ...props}: BodyProps): JSX.Element => {
     const [user, setUser] = useState([])
+    const [sessions, setSessions] = useState([])
     useEffect(() => {
         axios.get('https://6202b21c4d21c200170b99b8.mockapi.io/users').then(res => setUser(res.data))
+        axios.get('https://6202b21c4d21c200170b99b8.mockapi.io/sessions').then(res => setSessions(res.data))
     }, [])
     console.log(user)
 
@@ -31,7 +33,7 @@ export const Body = ({className, ...props}: BodyProps): JSX.Element => {
             </WhiteBlock>
             <Chat className={styles.chat} user={user}/>
             <Event className={styles.event}/>
-            <UpcomingSessions className={styles.upcomingSessions}/>
+            <UpcomingSessions className={styles.upcomingSessions} sessions={sessions}/>
         </div>
     )
 }

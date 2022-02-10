@@ -1,126 +1,155 @@
 .wrapper {
-  max-width: 336px;
-  position: relative;
-  max-height: 304px;
+	position: relative;
 
-  .event {
-    .image {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 20px;
-    }
+	max-width: 336px;
+	max-height: 304px;
 
-    .checked {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--purple);
-      font-weight: 500;
-      font-size: 8px;
-      line-height: 9px;
-      letter-spacing: 0.02em;
-      width: 56px;
-      height: 49px;
-      position: absolute;
-      top: 20px;
-      right: 33px;
-      box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
-      border-radius: 0 0 10px 10px;
+	.event {
+		.image {
+			position: relative;
 
-      span {
-        margin-top: 5px;
-        color: var(--white);
-      }
-    }
-  }
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-  .bottomBlock {
-    border-radius: 10px;
-    padding: 20px;
-    position: absolute;
-    background-color: var(--lightGrayBackground);
-    width: 315px;
-    bottom: -69px;
-    left: 10px;
-    display: grid;
-    grid-template-columns: 24px 186px 1fr;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-            'title title date'
-            'subtitle subtitle subtitle'
-            'time timeText timeJoin';
+			padding: 20px;
+		}
 
-    .title {
-      margin: 0;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 0.02em;
-      color: var(--deepBlue);
-      grid-area: title;
-    }
+		.checked {
+			position: absolute;
+			top: 20px;
+			right: 33px;
 
-    .subTitle {
-      font-size: 11px;
-      line-height: 13px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--darkPurpleText);
-      margin: 0 0 6px;
-      grid-area: subtitle;
-    }
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
 
-    .date {
-      text-align: center;
-      color: var(--grayText);
-      display: flex;
-      flex-direction: column;
-      width: 27px;
-      grid-area: date;
-      justify-self: end;
+			width: 56px;
+			height: 49px;
 
-      .number {
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 21px;
-      }
+			letter-spacing: 0.02em;
 
-      .text {
-        font-weight: 600;
-        font-size: 10px;
-        line-height: 11px;
-        text-transform: uppercase;
-      }
-    }
+			border-radius: 0 0 10px 10px;
+			background-color: var(--purple);
+			box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
 
-    .time {
-      grid-area: time;
-      align-self: center;
-    }
+			font-size: 8px;
+			font-weight: 500;
+			line-height: 9px;
 
-    .timeText {
-      grid-area: timeText;
-      margin-left: 4px;
-      font-style: italic;
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 0.02em;
-      color: var(--deepRed);
-      align-self: center;
-    }
+			span {
+				margin-top: 5px;
 
-    .timeJoin {
-      align-self: center;
-      grid-area: timeJoin;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 0.02em;
-      color: var(--purple);
-      cursor: pointer;
-    }
-  }
+				color: var(--white);
+			}
+		}
+	}
+
+	.bottomBlock {
+		position: absolute;
+		bottom: -69px;
+		left: 10px;
+
+		display: grid;
+
+		width: 315px;
+		padding: 20px;
+
+		border-radius: 10px;
+		background-color: var(--lightGrayBackground);
+		grid-template-columns: 24px 186px 1fr;
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas:
+			'title title date'
+			'subtitle subtitle subtitle'
+			'time timeText timeJoin';
+
+		.title {
+			margin: 0;
+
+			letter-spacing: 0.02em;
+
+			color: var(--deepBlue);
+
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 24px;
+			grid-area: title;
+		}
+
+		.subTitle {
+			margin: 0 0 6px;
+
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+
+			color: var(--darkPurpleText);
+
+			font-size: 11px;
+			line-height: 13px;
+			grid-area: subtitle;
+		}
+
+		.date {
+			display: flex;
+			flex-direction: column;
+
+			width: 27px;
+
+			text-align: center;
+
+			color: var(--grayText);
+			grid-area: date;
+			justify-self: end;
+
+			.number {
+				font-size: 18px;
+				font-weight: bold;
+				line-height: 21px;
+			}
+
+			.text {
+				text-transform: uppercase;
+
+				font-size: 10px;
+				font-weight: 600;
+				line-height: 11px;
+			}
+		}
+
+		.time {
+			align-self: center;
+			grid-area: time;
+		}
+
+		.timeText {
+			align-self: center;
+
+			margin-left: 4px;
+
+			letter-spacing: 0.02em;
+
+			color: var(--deepRed);
+
+			font-size: 14px;
+			font-style: italic;
+			line-height: 17px;
+			grid-area: timeText;
+		}
+
+		.timeJoin {
+			align-self: center;
+
+			cursor: pointer;
+			letter-spacing: 0.02em;
+
+			color: var(--purple);
+
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 17px;
+			grid-area: timeJoin;
+		}
+	}
 }
