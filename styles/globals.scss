@@ -2,6 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: #F0EFF5;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -13,4 +14,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --lightPurple: #C0BEFF;
+  --purple: #5855D6;
+  --darkPurpleText: #9592A6;
+  --red: #EE3637;
+  --white: #ffffff;
+  --green: #6FCF97;
+  --darkBlue: #0A043C;
+  --darkGray: #77838F;
+  --headline: #333269;
+  --lightGray: #EEEEEE;
 }

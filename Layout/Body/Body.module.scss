@@ -1,0 +1,38 @@
+.wrapper {
+  padding: 47px 40px;
+  display: grid;
+  grid-template-columns: 336px 425px 310px;
+  grid-template-rows: auto repeat(2, 1fr);
+  grid-template-areas:
+          'title title title'
+          'course course chat';
+  row-gap: 20px;
+  column-gap: 25px;
+
+  .title {
+    grid-area: title;
+  }
+
+  .course {
+    padding: 26px;
+    max-width: 787px;
+    max-height: 305px;
+    grid-area: course;
+
+    .programs {
+      margin: 0;
+    }
+
+    .card {
+      border-bottom: 1px solid #eeeeee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .chat {
+    grid-area: chat;
+  }
+}

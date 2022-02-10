@@ -1,0 +1,209 @@
+.wrapper {
+  width: 310px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: #FAFAFF;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 11px 16px 16px;
+    border-bottom: 1px solid var(--lightGray);
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
+      position: relative;
+
+      img {
+        object-fit: cover;
+      }
+
+      .online {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        bottom: 0;
+        right: 0;
+        background-color: var(--green);
+        border-radius: 50%;
+      }
+    }
+
+    .titleAvatar {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.02em;
+      color: var(--headline);
+    }
+  }
+
+  .chat {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    max-height: 640px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .userRow {
+      display: flex;
+      gap: 21px;
+      overflow-x: auto;
+      padding: 16px;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--lightGray);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: var(--darkPurpleText);
+      }
+
+      .user {
+        width: 48px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .plusIcon {
+        background-color: #E3E2E5;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+      }
+
+      .userAvatar {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+        background: linear-gradient(#FF2C55, #5855D6);
+        border-radius: 50%;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: transparent;
+          border: 1px solid var(--white);
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          top: 2px;
+          left: 2px;
+        }
+      }
+
+      .name {
+        color: var(--darkGray);
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .message {
+      padding: 20px 0;
+      margin: 0 16px;
+      display: grid;
+      grid-template-columns: 55px 1fr auto;
+      gap: 15px;
+      border-top: 1px solid var(--lightGray);
+
+      .messageAvatar {
+        display: flex;
+        align-self: center;
+        width: 55px;
+        height: 55px;
+        cursor: pointer;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      .chatBlock {
+        display: grid;
+        grid-template-rows: auto 1fr;
+
+        .chatName {
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 0.02em;
+          color: var(--headline);
+          cursor: pointer;
+        }
+
+        .messageUnread {
+          width: 154px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 0.02em;
+          color: var(--headline);
+          margin-top: 6px;
+          cursor: pointer;
+        }
+
+        .messageRead {
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 0.02em;
+          color: var(--darkPurpleText);
+        }
+      }
+
+      .unreadMessages {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        justify-items: center;
+        align-items: center;
+        cursor: pointer;
+
+        .activity {
+          font-size: 10px;
+          line-height: 12px;
+          text-align: right;
+          letter-spacing: 0.833333px;
+          color: var(--darkGray);
+        }
+        .unreadCount {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          background-color: var(--purple);
+          color: var(--white);
+          border-radius: 50%;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+  }
+}
