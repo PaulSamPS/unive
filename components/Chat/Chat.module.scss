@@ -1,6 +1,7 @@
 .wrapper {
-	width: 310px;
 	position: relative;
+
+	width: 310px;
 
 	.header {
 		display: flex;
@@ -25,6 +26,7 @@
 			width: 30px;
 			height: 30px;
 			margin-right: 12px;
+
 			cursor: pointer;
 
 			img {
@@ -161,8 +163,9 @@
 		}
 
 		.chat {
-			border-radius: 0;
 			max-height: 100%;
+
+			border-radius: 0;
 		}
 	}
 }
@@ -177,8 +180,9 @@
 		}
 
 		.chat {
-			border-radius: 0;
 			max-height: 100%;
+
+			border-radius: 0;
 		}
 	}
 }

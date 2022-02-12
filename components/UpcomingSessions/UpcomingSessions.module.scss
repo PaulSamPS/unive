@@ -1,6 +1,7 @@
 .wrapper {
-	padding: 26px 24px 19px;
 	position: relative;
+
+	padding: 26px 24px 19px;
 
 	.desktop {
 		display: grid;
@@ -9,15 +10,18 @@
 
 		.topBlock {
 			display: flex;
-			justify-content: space-between;
 			align-items: center;
+			justify-content: space-between;
+
 			margin-bottom: 27px;
 
 			.title {
 				margin: 0;
+
 				color: var(--headline);
-				font-weight: bold;
+
 				font-size: 21px;
+				font-weight: bold;
 				line-height: 25px;
 			}
 
@@ -77,8 +81,9 @@
 
 		.seeAll {
 			display: flex;
-			justify-content: right;
 			align-items: center;
+			justify-content: right;
+
 			margin-top: 13px;
 
 			cursor: pointer;
@@ -93,19 +98,18 @@
 	}
 }
 
-
 @media screen and (max-width: 430px) {
 	.wrapper {
-		padding: 17px 14px;
 		width: 345px;
+		padding: 17px 14px;
 
 		.desktop {
 			.topBlock {
 				margin-bottom: 22px;
 
 				.title {
-					font-weight: 500;
 					font-size: 16px;
+					font-weight: 500;
 					line-height: 19px;
 				}
 
@@ -115,9 +119,9 @@
 			}
 
 			.titleSessions {
+				margin-bottom: 12px;
 				grid-template-columns: 44px 1fr 87px;
 				column-gap: 10px;
-				margin-bottom: 12px;
 			}
 
 			.sessions {

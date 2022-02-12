@@ -1,46 +1,54 @@
 .menuMobile {
+	position: fixed;
+	z-index: 11;
+	bottom: 0;
+
 	display: none;
 	align-items: center;
-	background-color: var(--white);
-	min-width: 375px;
-	width: 100vw;
 	justify-content: space-around;
-	position: fixed;
-	bottom: 0;
-	filter: drop-shadow(-3px -3px 20px rgba(0, 0, 0, 0.05));
+
+	width: 100vw;
+	min-width: 375px;
 	height: 84px;
+
 	border-bottom: 5px solid var(--headline);
-	z-index: 11;
+	background-color: var(--white);
+	filter: drop-shadow(-3px -3px 20px rgba(0, 0, 0, 0.05));
 
 	.menuBlock {
-		border-top: 5px solid transparent;
 		display: grid;
+		align-items: center;
+
+		width: 90px;
+		height: 100%;
+
+		border-top: 5px solid transparent;
 		grid-template-rows: 17px auto 1fr;
 		grid-template-columns: 1fr;
 		grid-template-areas:
-					'.'
-					'icon'
-					'text';
-		height: 100%;
-		width: 90px;
-		align-items: center;
+			'.'
+			'icon'
+			'text';
 		justify-items: center;
 
 		.icon {
-			grid-area: icon;
 			display: flex;
-			justify-content: center;
 			align-items: center;
+			justify-content: center;
+
 			width: 25px;
 			height: 25px;
+			grid-area: icon;
 		}
 
 		.text {
-			grid-area: text;
+			letter-spacing: 0.02em;
+
+			color: var(--darkPurpleText);
+
 			font-size: 12px;
 			line-height: 14px;
-			letter-spacing: 0.02em;
-			color: var(--darkPurpleText);
+			grid-area: text;
 		}
 	}
 

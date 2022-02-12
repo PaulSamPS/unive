@@ -14,20 +14,21 @@
 	}
 
 	.title {
+		margin-top: 27px;
+		margin-left: 40px;
+
 		color: var(--headline);
 
 		font-size: 21px;
 		line-height: 25px;
 		grid-area: title;
-		margin-left: 40px;
-		margin-top: 27px;
 	}
 
 	.course {
 		height: 305px;
+		margin-left: 40px;
 		padding: 26px 9px 15px;
 		grid-area: course;
-		margin-left: 40px;
 
 		.programs {
 			margin: 0;
@@ -44,16 +45,19 @@
 
 	.chat {
 		grid-area: chat;
+
 		margin-left: 25px;
 	}
 
 	.event {
 		grid-area: event;
+
 		margin-left: 40px;
 	}
 
 	.upcomingSessions {
 		grid-area: upcomingSessions;
+
 		margin-bottom: 35px;
 	}
 
@@ -70,10 +74,10 @@
 	.wrapper {
 		grid-template-columns: 240px 400px auto;
 		grid-template-areas:
-		"sidebar header header"
-		"sidebar title title"
-		"sidebar course course"
-		"sidebar event upcomingSessions";
+			"sidebar header header"
+			"sidebar title title"
+			"sidebar course course"
+			"sidebar event upcomingSessions";
 
 		.course {
 			margin-right: 40px;
@@ -94,9 +98,10 @@
 		grid-template-columns: 400px auto;
 		grid-template-rows: repeat(3, auto);
 		grid-template-areas:
-		"title title"
-		"course course"
-		"event upcomingSessions";
+			"title title"
+			"course course"
+			"event upcomingSessions";
+
 		margin-top: 48px;
 
 		.sidebar {
@@ -123,23 +128,24 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(4, auto);
 		grid-template-areas:
-		"title"
-		"course"
-		"event"
-		"upcomingSessions";
+			"title"
+			"course"
+			"event"
+			"upcomingSessions";
+
 		justify-content: center;
 
 		.course {
-			margin-left: 20px;
-			margin-right: 20px;
 			width: calc(100% - 40px);
+			margin-right: 20px;
+			margin-left: 20px;
 		}
 
 		.upcomingSessions {
-			margin-left: 20px;
+			min-width: calc(100% - 40px);
 			margin-right: 20px;
 			margin-bottom: 104px;
-			min-width: calc(100% - 40px);
+			margin-left: 20px;
 		}
 	}
 }
@@ -149,11 +155,12 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto auto 1fr;
 		grid-template-areas:
-		"title"
-		"course"
-		"event"
-		"upcomingSessions";
+			"title"
+			"course"
+			"event"
+			"upcomingSessions";
 		justify-items: center;
+
 		margin: 60px 0 0;
 
 		.title {
@@ -162,13 +169,13 @@
 		}
 
 		.course {
-			margin: 0;
 			width: 89.6%;
+			margin: 0;
 		}
 
 		.event {
-			margin: 0;
 			width: 345px;
+			margin: 0;
 		}
 
 		.chat {

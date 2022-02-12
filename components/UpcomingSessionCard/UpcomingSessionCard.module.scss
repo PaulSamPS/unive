@@ -11,10 +11,10 @@
 
 	.dateSession {
 		display: flex;
+		align-items: center;
 		flex-direction: column;
 
 		justify-content: center;
-		align-items: center;
 
 		color: var(--grayText);
 		grid-area: dateSession;
@@ -88,11 +88,12 @@
 
 @media screen and (max-width: 430px) {
 	.sessions {
-		grid-template-columns: 44px 1fr auto;
-		column-gap: 10px;
-		border-bottom: 1px solid var(--lightGray);
 		margin: 0;
 		padding: 12px 0;
+
+		border-bottom: 1px solid var(--lightGray);
+		grid-template-columns: 44px 1fr auto;
+		column-gap: 10px;
 
 		&:last-child {
 			border-bottom: 0;
