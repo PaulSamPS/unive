@@ -1,5 +1,5 @@
 import {DetailedHTMLProps, HTMLAttributes} from 'react'
-import {ICourseCard} from './CourseCard.interface'
+import {ICourseCard} from '../../interfaces/CourseCard.interface'
 
 export interface CourseCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     course: ICourseCard

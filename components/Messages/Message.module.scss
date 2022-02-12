@@ -1,0 +1,108 @@
+.message {
+  display: grid;
+
+  margin: 0 16px;
+  padding: 20px 0;
+
+  border-top: 1px solid var(--lightGray);
+  grid-template-columns: 55px 135px 1fr;
+  gap: 15px;
+
+  .messageAvatar {
+    display: flex;
+    align-self: center;
+
+    width: 55px;
+    height: 55px;
+
+    cursor: pointer;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .chatBlock {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    .chatName {
+      cursor: pointer;
+      letter-spacing: 0.02em;
+
+      color: var(--headline);
+
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 16px;
+    }
+
+    .messageUnread {
+      overflow: hidden;
+
+      width: 154px;
+      margin-top: 12px;
+
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      text-overflow: ellipsis;
+
+      color: var(--headline);
+
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 16px;
+    }
+
+    .messageRead {
+      letter-spacing: 0.02em;
+
+      color: var(--darkPurpleText);
+
+      font-size: 13px;
+      font-weight: normal;
+      line-height: 16px;
+    }
+  }
+
+  .unreadMessages {
+    display: grid;
+    align-items: center;
+
+    cursor: pointer;
+    grid-template-rows: 16px 1fr;
+    justify-items: center;
+
+    .activity {
+      text-align: right;
+      letter-spacing: 0.833333px;
+
+      color: var(--darkGray);
+
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .unreadCount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 25px;
+      height: 25px;
+
+      color: var(--white);
+      border-radius: 50%;
+      background-color: var(--purple);
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17px;
+      margin-top: 12px;
+    }
+
+    .unreadCountNone {
+      display: none;
+    }
+  }
+}

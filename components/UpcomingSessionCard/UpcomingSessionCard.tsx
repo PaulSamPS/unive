@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 import styles from './UpcomingSessionCard.module.scss'
 
-const UpcomingSessionCard = ({session, className, ...props}: UpcomingSessionCardProps): JSX.Element => {
+export const UpcomingSessionCard = ({session, className, ...props}: UpcomingSessionCardProps): JSX.Element => {
     return (
         <div key={session.id} className={cn(styles.sessions, className)} {...props}>
             <div className={styles.dateSession}>
@@ -22,5 +22,3 @@ const UpcomingSessionCard = ({session, className, ...props}: UpcomingSessionCard
         </div>
     )
 }
-
-export default UpcomingSessionCard

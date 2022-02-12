@@ -1,0 +1,7 @@
+export const SET_MENU = 'SET_MENU'
+export const SET_MOBILE_MENU = 'SET_MOBILE_MENU'
+export const SET_ACTIVE_MENU = 'SET_ACTIVE_MENU'
+export const SET_USERS = 'SET_USERS'
+export const SET_SESSIONS = 'SET_SESSIONS'
+export const SET_LOADING = 'SET_LOADING'
+export const API = 'https://6202b21c4d21c200170b99b8.mockapi.io'

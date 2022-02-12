@@ -1,63 +1,66 @@
-import React, {useState} from 'react'
 import {WhiteBlock} from '../WhiteBlock/WhiteBlock'
-import {IUserMessenger} from './Chat.interface'
+import {IUserMessenger} from '../../interfaces/ChatUser.interface'
 import {ChatProps} from './Chat.props'
-import PlusIcon from '../../Layout/Body/plus.svg'
+import {ChatUser} from '../ChatUser/ChatUser'
+import {Message} from '../Messages/Message'
+import {useAppDispatch, useAppSelector} from '../../hooks/useRedux'
+import {useEffect} from 'react'
+import {getUsers} from '../../redux/actions/apiReducer'
+import {Spinner} from '../Spinner/Spinner'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 import cn from 'classnames'
+import PlusIcon from './plus.svg'
+import ArrowIcon from './arrow.svg'
 
 import styles from './Chat.module.scss'
 
-export const Chat = ({user, className, ...props}: ChatProps): JSX.Element => {
-    const [messageRead, setMessageRead] = useState(false)
+export const Chat = ({ className, ...props}: ChatProps): JSX.Element => {
+    const dispatch = useAppDispatch()
+    const users = useAppSelector(state => state.api.users)
+    const loading = useAppSelector(state => state.api.loading)
+    const router = useRouter()
+    const path = router.pathname
+
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [])
 
     return (
-        <div className={cn(styles.wrapper, className)} {...props}>
-            <div className={styles.header}>
-                <div className={styles.avatar} >
-                    <img src='/avatar.png' width={30} height={30} alt='avatar'/>
-                    <div className={styles.online}/>
-                </div>
+        <div className={cn(styles.wrapper, className)} {...props} style={path === '/messenger' ? {width: '100%'} : undefined}>
+            <div className={styles.header} style={path === '/messenger' ? {borderRadius: '0'} : undefined}>
+                {path === '/messenger'
+                    ?
+                    <Link href={'/'} passHref>
+                        <div className={styles.back}>
+                            <ArrowIcon />
+                        </div>
+                    </Link>
+                    :
+                    <div className={styles.avatar}>
+                        <img src='/avatar.png' width={30} height={30} alt='avatar'/>
+                        <div className={styles.online}/>
+                    </div>
+                }
                 <span className={styles.titleAvatar}>Messages</span>
             </div>
-            <WhiteBlock className={styles.chat}>
-                <div className={styles.userRow}>
-                    <div className={styles.user}>
-                        <div className={styles.plusIcon}>
-                            <PlusIcon/>
-                        </div>
-                        <span className={styles.name}>Add</span>
-                    </div>
-                    {user.map((user: IUserMessenger) =>
-                        <div key={user.id} className={styles.user}>
-                            <div className={styles.userAvatar}>
-                                <img src={user.avatar} alt='user'/>
+            {loading
+                ?
+                    <Spinner style={path === '/messenger' ? {position: 'fixed'} : undefined}/>
+                :
+                    <WhiteBlock className={styles.chat} style={path === '/messenger' ? {maxHeight: '100%', borderRadius: '0'} : undefined}>
+                    <div className={styles.userRow}>
+                        <div className={styles.user}>
+                            <div className={styles.plusIcon}>
+                                <PlusIcon/>
                             </div>
-                            <span className={styles.name}>{user.firstName}</span>
+                            <span className={styles.name}>Add</span>
                         </div>
-                    )}
-                </div>
-                {user.map((user: IUserMessenger) =>
-                    <div key={user.id} className={styles.message}>
-                        <div className={styles.messageAvatar}>
-                            <img src={user.avatar} alt='user'/>
-                        </div>
-                        <div className={styles.chatBlock}>
-                            <div className={styles.chatName}>
-                                <span>{user.firstName}</span>
-                                &nbsp;
-                                <span>{user.lastName}</span>
-                            </div>
-                            <div onClick={() => setMessageRead(!messageRead)} className={cn(styles.messageUnread, {
-                                [styles.messageRead]: messageRead
-                            })}>{user.chat[0].message}</div>
-                        </div>
-                        <div className={styles.unreadMessages}>
-                            <span className={styles.activity}>{user.visit}</span>
-                            <div className={styles.unreadCount}>{user.chat.length}</div>
-                        </div>
+                        {users.map((user: IUserMessenger) => <ChatUser key={user.id} user={user}/>)}
                     </div>
-                )}
-            </WhiteBlock>
+                    {users.map((user: IUserMessenger) => <Message key={user.id} user={user}/>)}
+                </WhiteBlock>
+            }
         </div>
     )
 }

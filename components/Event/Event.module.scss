@@ -1,129 +1,289 @@
 .wrapper {
 	position: relative;
+	width: 330px;
+	height: 304px;
 
-	max-width: 336px;
-	max-height: 304px;
+	.desktop {
+		.event {
+			.image {
+				position: relative;
 
-	.event {
-		.image {
-			position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 
-			display: flex;
-			align-items: center;
-			justify-content: center;
+				padding: 20px 0;
 
-			padding: 20px;
-		}
+				img {
+					width: 298px;
+					height: 270px;
+				}
+			}
 
-		.checked {
-			position: absolute;
-			top: 20px;
-			right: 33px;
+			.checked {
+				position: absolute;
+				top: 20px;
+				right: 33px;
 
-			display: flex;
-			align-items: center;
-			flex-direction: column;
-			justify-content: center;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;
 
-			width: 56px;
-			height: 49px;
+				width: 56px;
+				height: 49px;
 
-			letter-spacing: 0.02em;
+				letter-spacing: 0.02em;
 
-			border-radius: 0 0 10px 10px;
-			background-color: var(--purple);
-			box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
+				border-radius: 0 0 10px 10px;
+				background-color: var(--purple);
+				box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
 
-			font-size: 8px;
-			font-weight: 500;
-			line-height: 9px;
+				font-size: 8px;
+				font-weight: 500;
+				line-height: 9px;
 
-			span {
-				margin-top: 5px;
+				span {
+					margin-top: 5px;
 
-				color: var(--white);
+					color: var(--white);
+				}
 			}
 		}
-	}
 
-	.bottomBlock {
-		position: absolute;
-		bottom: -69px;
-		left: 10px;
+		.bottomBlock {
+			position: absolute;
+			bottom: -70px;
+			left: 10px;
 
-		display: grid;
+			display: grid;
 
-		width: 315px;
-		padding: 20px;
+			width: 315px;
+			padding: 21px 20px;
 
-		border-radius: 10px;
-		background-color: var(--lightGrayBackground);
-		grid-template-columns: 24px 186px 1fr;
-		grid-template-rows: repeat(3, auto);
-		grid-template-areas:
+			border-radius: 10px;
+			background-color: var(--lightGrayBackground);
+			grid-template-columns: 24px 186px 1fr;
+			grid-template-rows: repeat(3, auto);
+			grid-template-areas:
 			'title title date'
 			'subtitle subtitle subtitle'
 			'time timeText timeJoin';
 
-		.title {
+			.title {
+				margin: 0;
+
+				letter-spacing: 0.02em;
+
+				color: var(--deepBlue);
+
+				font-size: 20px;
+				font-weight: 500;
+				line-height: 24px;
+				grid-area: title;
+			}
+
+			.subTitle {
+				margin: 0 0 6px;
+
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+
+				color: var(--darkPurpleText);
+
+				font-size: 11px;
+				line-height: 13px;
+				grid-area: subtitle;
+			}
+
+			.date {
+				display: flex;
+				flex-direction: column;
+
+				width: 27px;
+
+				text-align: center;
+
+				color: var(--grayText);
+				grid-area: date;
+				justify-self: end;
+
+				.number {
+					font-size: 18px;
+					font-weight: bold;
+					line-height: 21px;
+				}
+
+				.text {
+					text-transform: uppercase;
+
+					font-size: 10px;
+					font-weight: 600;
+					line-height: 11px;
+				}
+			}
+
+			.time {
+				align-self: center;
+				grid-area: time;
+			}
+
+			.timeText {
+				align-self: center;
+
+				margin-left: 4px;
+
+				letter-spacing: 0.02em;
+
+				color: var(--deepRed);
+
+				font-size: 14px;
+				font-style: italic;
+				line-height: 17px;
+				grid-area: timeText;
+			}
+
+			.timeJoin {
+				align-self: center;
+
+				cursor: pointer;
+				letter-spacing: 0.02em;
+
+				color: var(--purple);
+
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 17px;
+				grid-area: timeJoin;
+			}
+		}
+	}
+}
+
+.mobile {
+	min-width: 345px;
+	display: none;
+
+	.bottomBlockMobile {
+		display: grid;
+
+		padding: 20px 14px;
+
+		border-radius: 10px;
+		background-color: var(--lightGrayBackground);
+		grid-template-columns: auto 24px auto 1fr;
+		grid-template-rows: 19px 12px auto 24px;
+		grid-template-areas:
+			'imageMobile titleMobile titleMobile date'
+			'imageMobile subtitleMobile subtitleMobile subtitleMobile'
+			'imageMobile . . .'
+			'imageMobile timeMobile timeTextMobile timeJoinMobile';
+
+		.imageMobile {
+			width: 72px;
+			height: 72px;
+			grid-area: imageMobile;
+			position: relative;
+			border-radius: 10px;
+			margin-right: 10px;
+
+			img {
+				width: 72px;
+				height: 72px;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+
+			.background {
+				opacity: 0.7;
+				border-radius: 10px;
+				background-color: var(--purple);
+				width: 72px;
+				height: 72px;
+				position: absolute;
+				top: 0;
+			}
+
+			.checkedMobile {
+				flex-direction: column;
+				top: 0;
+				width: 72px;
+				height: 72px;
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				span {
+					font-weight: 500;
+					font-size: 10px;
+					line-height: 12px;
+					letter-spacing: 0.02em;
+					text-shadow: 1px 1px 4px #3E3BAF;
+					color: var(--white);
+
+					margin-top: 6px;
+				}
+			}
+		}
+
+		.titleMobile {
 			margin: 0;
 
 			letter-spacing: 0.02em;
 
 			color: var(--deepBlue);
 
-			font-size: 20px;
 			font-weight: 500;
-			line-height: 24px;
-			grid-area: title;
+			font-size: 16px;
+			line-height: 19px;
+			grid-area: titleMobile;
 		}
 
-		.subTitle {
-			margin: 0 0 6px;
+		.subTitleMobile {
+			margin: 0;
 
 			letter-spacing: 0.06em;
 			text-transform: uppercase;
 
 			color: var(--darkPurpleText);
-
-			font-size: 11px;
-			line-height: 13px;
-			grid-area: subtitle;
+			font-size: 10px;
+			line-height: 12px;
+			grid-area: subtitleMobile;
 		}
 
-		.date {
+		.dateMobile {
 			display: flex;
 			flex-direction: column;
-
+			justify-self: flex-end;
 			width: 27px;
 
 			text-align: center;
 
 			color: var(--grayText);
 			grid-area: date;
-			justify-self: end;
 
-			.number {
-				font-size: 18px;
+			.numberMobile {
+				font-size: 16px;
 				font-weight: bold;
-				line-height: 21px;
+				line-height: 19px;
 			}
 
-			.text {
+			.dateTextMobile {
 				text-transform: uppercase;
 
-				font-size: 10px;
+				font-size: 9px;
 				font-weight: 600;
-				line-height: 11px;
+				line-height: 10px;
 			}
 		}
 
-		.time {
+		.timeMobile {
 			align-self: center;
-			grid-area: time;
+			grid-area: timeMobile;
 		}
 
-		.timeText {
+		.timeTextMobile {
 			align-self: center;
 
 			margin-left: 4px;
@@ -135,21 +295,35 @@
 			font-size: 14px;
 			font-style: italic;
 			line-height: 17px;
-			grid-area: timeText;
+			grid-area: timeTextMobile;
 		}
 
-		.timeJoin {
-			align-self: center;
+		.timeJoinMobile {
+			justify-self: flex-end;
 
 			cursor: pointer;
 			letter-spacing: 0.02em;
 
 			color: var(--purple);
 
-			font-size: 14px;
+			font-size: 12px;
 			font-weight: 600;
-			line-height: 17px;
-			grid-area: timeJoin;
+			line-height: 14px;
+			grid-area: timeJoinMobile;
+			align-self: center;
 		}
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.wrapper {
+		display: none;
+	}
+
+	.mobile {
+		display: block;
+		margin-right: 20px;
+		margin-left: 20px;
+		width: calc(100% - 40px);
 	}
 }

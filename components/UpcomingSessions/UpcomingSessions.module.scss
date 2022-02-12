@@ -1,72 +1,134 @@
 .wrapper {
-	max-width: 425px;
-	max-height: 373px;
-	padding: 27px 24px;
+	padding: 26px 24px 19px;
+	position: relative;
 
-	.title {
-		margin: 0 0 28px;
-	}
-
-	.titleSessions {
+	.desktop {
 		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto 1fr auto;
 
-		margin-bottom: 27px;
+		.topBlock {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 27px;
 
-		color: var(--softPurpleText);
+			.title {
+				margin: 0;
+				color: var(--headline);
+				font-weight: bold;
+				font-size: 21px;
+				line-height: 25px;
+			}
 
-		font-size: 14px;
-		line-height: 17px;
-		grid-template-columns: 60px 1fr 87px;
-		grid-template-areas: 'date class time';
-		column-gap: 18px;
-
-		.date {
-			grid-area: date;
+			.dotsIcon {
+				display: none;
+			}
 		}
 
-		.class {
-			grid-area: class;
+		.titleSessions {
+			display: grid;
+
+			margin-bottom: 27px;
+
+			color: var(--softPurpleText);
+
+			font-size: 14px;
+			line-height: 17px;
+			grid-template-columns: 65px 1fr 87px;
+			grid-template-areas: 'date class time';
+			column-gap: 18px;
+
+			.date {
+				grid-area: date;
+			}
+
+			.class {
+				grid-area: class;
+			}
+
+			.time {
+				grid-area: time;
+			}
 		}
 
-		.time {
-			grid-area: time;
+		.sessions {
+			overflow-y: auto;
+
+			max-height: 204px;
+
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+
+			&::-webkit-scrollbar {
+				height: 5px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background-color: var(--lightGray);
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: var(--darkPurpleText);
+			}
+		}
+
+		.seeAll {
+			display: flex;
+			justify-content: right;
+			align-items: center;
+			margin-top: 13px;
+
+			cursor: pointer;
+			letter-spacing: 0.02em;
+
+			color: var(--purple);
+
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 17px;
 		}
 	}
+}
 
-	.sessions {
-		overflow-y: auto;
 
-		max-height: 204px;
+@media screen and (max-width: 430px) {
+	.wrapper {
+		padding: 17px 14px;
+		width: 345px;
 
-		&::-webkit-scrollbar {
-			width: 0;
+		.desktop {
+			.topBlock {
+				margin-bottom: 22px;
+
+				.title {
+					font-weight: 500;
+					font-size: 16px;
+					line-height: 19px;
+				}
+
+				.dotsIcon {
+					display: block;
+				}
+			}
+
+			.titleSessions {
+				grid-template-columns: 44px 1fr 87px;
+				column-gap: 10px;
+				margin-bottom: 12px;
+			}
+
+			.sessions {
+				max-height: 220px;
+				padding: 5px 0;
+			}
+
+			.seeAll {
+				font-size: 12px;
+				line-height: 14px;
+			}
 		}
-
-		&::-webkit-scrollbar {
-			height: 5px;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			border-radius: 10px;
-			background-color: var(--lightGray);
-		}
-
-		&::-webkit-scrollbar-track {
-			background-color: var(--darkPurpleText);
-		}
-	}
-
-	.seeAll {
-		display: flex;
-		justify-content: right;
-
-		cursor: pointer;
-		letter-spacing: 0.02em;
-
-		color: var(--purple);
-
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 17px;
 	}
 }
