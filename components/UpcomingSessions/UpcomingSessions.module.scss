@@ -1,7 +1,9 @@
 .wrapper {
 	position: relative;
 
-	padding: 26px 24px 19px;
+	min-height: 375px;
+
+	padding: 26px 19px 19px;
 
 	.desktop {
 		display: grid;
@@ -59,23 +61,10 @@
 		.sessions {
 			overflow-y: auto;
 
-			max-height: 204px;
+			max-height: 205px;
 
 			&::-webkit-scrollbar {
 				width: 0;
-			}
-
-			&::-webkit-scrollbar {
-				height: 5px;
-			}
-
-			&::-webkit-scrollbar-thumb {
-				border-radius: 10px;
-				background-color: var(--lightGray);
-			}
-
-			&::-webkit-scrollbar-track {
-				background-color: var(--darkPurpleText);
 			}
 		}
 
