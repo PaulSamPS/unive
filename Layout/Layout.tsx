@@ -8,7 +8,6 @@ import UpcomingSessions from '../components/UpcomingSessions/UpcomingSessions'
 import {MobileMenu} from '../components/MobileMenu/MobileMenu'
 
 import styles from './Layout.module.scss'
-import {useAppSelector} from "../hooks/useRedux";
 
 const courses = [
     {id: 0, title: 'Master of Computer Science', desc: 'University of Upstateat at Brookstone', img:'/placeholder1.png', average: 'A-'},
